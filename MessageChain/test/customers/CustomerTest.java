@@ -18,4 +18,5 @@ public class CustomerTest {
             
         assertEquals(Continent.EUROPE, customer.getAddress().getCity().getCountry().getContinent());
     }
+
 }
