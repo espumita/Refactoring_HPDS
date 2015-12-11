@@ -23,4 +23,7 @@ public class Customer {
         this.address = address;
     }
 
+    public boolean isEuropean() {
+        return getAddress().isInEurope();
+    }
 }

@@ -16,7 +16,7 @@ public class CustomerTest {
         Customer customer = new Customer("Carlos Acosta");
         customer.setAddress(address);
             
-        assertEquals(Continent.EUROPE, customer.getAddress().getCity().getCountry().getContinent());
+        assertTrue(customer.isEuropean());
     }
 
 }

@@ -30,4 +30,7 @@ public class Address {
         this.city = city;
     }
 
+    public boolean isInEurope() {
+        return getCity().isEuropean();
+    }
 }
