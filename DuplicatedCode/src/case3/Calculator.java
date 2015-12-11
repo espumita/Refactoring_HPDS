@@ -1,19 +1,23 @@
 package case3;
 
+import java.util.stream.IntStream;
+
 public class Calculator {
 
-    public long sum(int min, int max) {
-        long result = 0;
-        for (int i = min ; i <= max ; i++)
-            result += i;
-        return result;
+    public long sum(Range range) {
+       return evaluate(range, i -> i);
     }
 
-    public long sumOfSquares(int min, int max) {
-        long result = 0;
-        for (int i = min ; i <= max ; i++)
-            result += i * i;
-        return result;
+    public long sumOfSquares(Range range) {
+        return evaluate(range, i -> i * i);
+    }
+
+    private long evaluate(Range range, Function function){
+        return IntStream.range(range.min(),range.max()+1).mapToLong(i -> function.evaluate(i)).sum();
+    }
+
+    public interface Function{
+        long evaluate(long value);
     }
 
 }
