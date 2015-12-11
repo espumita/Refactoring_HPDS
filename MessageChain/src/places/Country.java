@@ -10,15 +10,15 @@ public class Country {
         this.continent = continent;
     }
 
-    public String getName() {
+    public String name() {
         return name;
     }
     
-    public Continent getContinent() {
+    public Continent continent() {
         return continent;
     }
 
     public boolean isEuropean() {
-        return getContinent() == Continent.EUROPE;
+        return continent() == Continent.EUROPE;
     }
 }

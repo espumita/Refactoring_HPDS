@@ -6,31 +6,36 @@ public class Address {
     private String postalCode;
     private City city;
 
-    public String getStreet() {
+    public String street() {
         return street;
     }
 
-    public void setStreet(String street) {
+    public Address street(String street){
         this.street = street;
+        return this;
     }
 
-    public String getPostalCode() {
+    public String postalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(String postalCode) {
+    public Address postalCode(String postalCode) {
         this.postalCode = postalCode;
+        return this;
     }
 
-    public City getCity() {
+    public City city() {
         return city;
     }
 
-    public void setCity(City city) {
+    public Address city(City city) {
         this.city = city;
+        return this;
     }
 
     public boolean isInEurope() {
-        return getCity().isEuropean();
+        return city().isEuropean();
     }
+
+
 }

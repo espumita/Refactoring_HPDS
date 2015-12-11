@@ -11,11 +11,10 @@ public class CustomerTest {
     
     @Test
     public void isEuropean() {
-        Address address = new Address();
-        address.setCity(new City("Barcelona", new Country("España", Continent.EUROPE)));
-        Customer customer = new Customer("Carlos Acosta");
-        customer.setAddress(address);
-            
+        Customer customer = new Customer("Carlos Acosta")
+                .address(new Address()
+                    .postalCode("35011")
+                    .city(new City("Barcelona",new Country("España", Continent.EUROPE))));
         assertTrue(customer.isEuropean());
     }
 

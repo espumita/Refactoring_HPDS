@@ -11,19 +11,21 @@ public class Customer {
         this.name = name;
     }
 
-    public String getName() {
+    public String name() {
         return name;
     }
 
-    public Address getAddress() {
+    public Address address() {
         return address;
     }
 
-    public void setAddress(Address address) {
+    public Customer address(Address address) {
         this.address = address;
+        return this;
     }
 
     public boolean isEuropean() {
-        return getAddress().isInEurope();
+        return address().isInEurope();
     }
+
 }

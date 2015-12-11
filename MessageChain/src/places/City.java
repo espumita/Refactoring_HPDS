@@ -10,15 +10,15 @@ public class City {
         this.country = country;
     }
 
-    public String getName() {
+    public String name() {
         return name;
     }
 
-    public Country getCountry() {
+    public Country country() {
         return country;
     }
 
     public boolean isEuropean() {
-        return getCountry().isEuropean();
+        return country().isEuropean();
     }
 }
