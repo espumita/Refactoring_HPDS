@@ -3,41 +3,42 @@ package case1;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 public class Account {
-    
-    private double balance;
-    private Date lastTransactionDate;
-    private ArrayList<Transaction> transactionList;
+
+    private List<Transaction> transactionList;
 
     public Account() {
-		this.balance = 0;
-		this.lastTransactionDate = null;
-		this.transactionList = new ArrayList<Transaction>();
+		this.transactionList = new ArrayList<>();
     }
 
     public double getBalance() {
-        return balance;
+        return transactionList.stream().mapToDouble(Transaction::amount).sum();
     }
 
     public Date getLastTransactionDate() {
-        return lastTransactionDate;
+        return transactionList.size() == 0 ? null : getLastTransaction().date();
     }
-    
+
+    private Transaction getLastTransaction() {
+        return transactionList.get(transactionList.size()-1);
+    }
+
     public void credit(double amount) {
-        balance = balance - amount;
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        transactionList.add(new Transaction(date, -amount));
-        lastTransactionDate = date;
+        createTransaction(-amount);
+    }
+
+    private void createTransaction(double amount) {
+        transactionList.add(new Transaction(now(), amount));
+    }
+
+    private Date now() {
+        return Calendar.getInstance().getTime();
     }
 
     public void debit(double amount) {
-        balance = balance + amount;
-        Calendar calendar = Calendar.getInstance();
-        Date date = calendar.getTime();
-        transactionList.add(new Transaction(date, amount));
-        lastTransactionDate = date;
+        createTransaction(amount);
     }
 
 }

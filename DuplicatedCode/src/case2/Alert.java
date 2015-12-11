@@ -14,19 +14,11 @@ public class Alert {
     private final int level;
 
     public Alert(double average, int rating, Date expiry) {
-        this.average = average;
-        this.rating = rating;
-        this.expiry = expiry;
-        this.maturity = null;
-        this.level = NORMAL;
+        this(average,rating,expiry,null,NORMAL);
     }
 
     public Alert(double average, int rating, Date expiry, Date maturity) {
-        this.average = average;
-        this.rating = rating;
-        this.expiry = expiry;
-        this.maturity = maturity;
-        this.level = NORMAL;
+        this(average,rating,expiry,maturity,NORMAL);
     }
 
     public Alert(double average, int rating, Date expiry, Date maturity, int level) {
@@ -37,19 +29,19 @@ public class Alert {
         this.level = level;
     }
 
-    public double getAverage() {
+    public double average() {
         return average;
     }
 
-    public int getRating() {
+    public int rating() {
         return rating;
     }
 
-    public Date getExpiry() {
+    public Date expiry() {
         return expiry;
     }
 
-    public Date getMaturity() {
+    public Date maturity() {
         return maturity;
     }
 

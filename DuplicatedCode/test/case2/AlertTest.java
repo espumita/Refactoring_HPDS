@@ -11,10 +11,10 @@ public class AlertTest {
     @Test
     public void testBasic() {
         Alert alert = new Alert(2.0, 1, createDate(2013, 2, 10, 8, 15, 30));
-        assertEquals(2.0, alert.getAverage(), 0);
-        assertEquals(1, alert.getRating());
-        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.getExpiry());
-        assertEquals(null, alert.getMaturity());
+        assertEquals(2.0, alert.average(), 0);
+        assertEquals(1, alert.rating());
+        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.expiry());
+        assertEquals(null, alert.maturity());
         assertTrue(alert.isNormalLevel());
         assertFalse(alert.isHighLevel());
         assertFalse(alert.isLowLevel());
@@ -23,10 +23,10 @@ public class AlertTest {
     @Test
     public void testMaturity() {
         Alert alert = new Alert(2.0, 1, createDate(2013, 2, 10, 8, 15, 30), createDate(2013, 2, 12, 0, 0, 0));
-        assertEquals(2.0, alert.getAverage(), 0);
-        assertEquals(1, alert.getRating());
-        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.getExpiry());
-        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.getMaturity());
+        assertEquals(2.0, alert.average(), 0);
+        assertEquals(1, alert.rating());
+        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.expiry());
+        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.maturity());
         assertTrue(alert.isNormalLevel());
         assertFalse(alert.isHighLevel());
         assertFalse(alert.isLowLevel());
@@ -35,10 +35,10 @@ public class AlertTest {
     @Test
     public void testHighLevel() {
         Alert alert = new Alert(2.0, 1, createDate(2013, 2, 10, 8, 15, 30), createDate(2013, 2, 12, 0, 0, 0), Alert.HIGH);
-        assertEquals(2.0, alert.getAverage(), 0);
-        assertEquals(1, alert.getRating());
-        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.getExpiry());
-        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.getMaturity());
+        assertEquals(2.0, alert.average(), 0);
+        assertEquals(1, alert.rating());
+        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.expiry());
+        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.maturity());
         assertFalse(alert.isNormalLevel());
         assertTrue(alert.isHighLevel());
         assertFalse(alert.isLowLevel());
@@ -47,10 +47,10 @@ public class AlertTest {
     @Test
     public void testNormalLevel() {
         Alert alert = new Alert(2.0, 1, createDate(2013, 2, 10, 8, 15, 30), createDate(2013, 2, 12, 0, 0, 0), Alert.NORMAL);
-        assertEquals(2.0, alert.getAverage(), 0);
-        assertEquals(1, alert.getRating());
-        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.getExpiry());
-        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.getMaturity());
+        assertEquals(2.0, alert.average(), 0);
+        assertEquals(1, alert.rating());
+        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.expiry());
+        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.maturity());
         assertTrue(alert.isNormalLevel());
         assertFalse(alert.isHighLevel());
         assertFalse(alert.isLowLevel());
@@ -59,10 +59,10 @@ public class AlertTest {
     @Test
     public void testLowLevel() {
         Alert alert = new Alert(2.0, 1, createDate(2013, 2, 10, 8, 15, 30), createDate(2013, 2, 12, 0, 0, 0), Alert.LOW);
-        assertEquals(2.0, alert.getAverage(), 0);
-        assertEquals(1, alert.getRating());
-        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.getExpiry());
-        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.getMaturity());
+        assertEquals(2.0, alert.average(), 0);
+        assertEquals(1, alert.rating());
+        assertDateEquals(createDate(2013, 2, 10, 8, 15, 30), alert.expiry());
+        assertDateEquals(createDate(2013, 2, 12, 0, 0, 0), alert.maturity());
         assertFalse(alert.isNormalLevel());
         assertFalse(alert.isHighLevel());
         assertTrue(alert.isLowLevel());
